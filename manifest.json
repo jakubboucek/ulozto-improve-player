@@ -1,0 +1,31 @@
+{
+    "manifest_version": 2,
+    "name": "Uloz.to improve player",
+    "description": "Extension for improve player on Uloz.to (https://ulozto.cz/)",
+    "version": "0.1",
+    "permissions": [
+        "https://ulozto.cz/*",
+        "https://uloz.to/*"
+    ],
+    "author": "Jakub Bouček",
+    "homepage_url": "https://github.com/jakubboucek/ulozto-improve-player",
+    "short_name": "Improve Uloz.to player",
+    "icons": {
+        "16": "ulozto-player-16.png",
+        "48": "ulozto-player-48.png",
+        "128": "ulozto-player-128.png",
+        "480": "ulozto-player-480.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://ulozto.cz/*",
+                "https://uloz.to/*"
+            ],
+            "js": [
+                "ulozto-player.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
