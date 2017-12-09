@@ -1,14 +1,14 @@
 'use strict';
 
-(function (_window, _body) {
+(function (_window, _document, _body) {
 
-    window.addEventListener('keydown', keyDownHandler, true);
-    window.addEventListener('keypress', keyPressHandler, true);
+    _window.addEventListener('keydown', keyDownHandler, true);
+    _window.addEventListener('keypress', keyPressHandler, true);
 
     /**
      * Receive all key event and filter only non-form (no to try catching passwords)
      * @param {KeyboardEvent} event
-     * @throws {NoVideoException}
+     * @throws {Error}
      */
     function keyDownHandler(event) {
         if (!isAcceptableEvent(event)) {
@@ -65,7 +65,7 @@
      * @throws {NoVideoException}
      */
     function getVideoElement() {
-        const videoElement = document.querySelector('div.stream-player.is-playing  > video');
+        const videoElement = _document.querySelector('div.stream-player.is-playing  > video, video#liveHtml5Player');
         if (videoElement === null) {
             throw new NoVideoException();
         }
@@ -107,4 +107,4 @@
         this.name = 'NoVideoException';
     }
 
-})(window, document.body);
+})(window, document, document.body);

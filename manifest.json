@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "Uloz.to improve player",
     "description": "Extension for improve player on Uloz.to (https://ulozto.cz/)",
-    "version": "0.1",
+    "version": "0.1.1",
     "permissions": [
         "https://ulozto.cz/*",
         "https://uloz.to/*"
