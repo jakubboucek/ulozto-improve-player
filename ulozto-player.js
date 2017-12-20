@@ -20,6 +20,10 @@
                 case 'Space':
                     spaceHandler(event);
                     break;
+                case 'ArrowLeft':
+                case 'ArrowRight':
+                    arrowSeekHandler(event);
+                    break;
             }
         }
         catch (error) {
@@ -57,6 +61,17 @@
         } else {
             video.pause();
         }
+    }
+
+    /**
+     * Seek video 10 seconds backward or forward
+     * @param {KeyboardEvent} event
+     * @throws {NoVideoException}
+     */
+    function arrowSeekHandler(event) {
+        const video = getVideoElement();
+
+        video.currentTime += (event.code === 'ArrowLeft' ? -10 : 10);
     }
 
     /**
