@@ -6,6 +6,4 @@ Install from Chrome Web Store: [**Uloz.to improve player**](https://chrome.googl
 
 ## Features
 - Allow un/pause video by Space key
-
-## Planned features
 - Seek on video by Arrow keys (like YouTube) 
